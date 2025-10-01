@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "nodenext",
+        "target": "esnext",
+        "allowJs": true,
+        "checkJs": true,
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+        "noImplicitAny": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "strict": false
+    },
+    "include": ["**/*.ts", "**/*.js"],
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,16 @@
+export FORCE_COLOR=1
+STAGED_FILE_PATH=$(git diff --cached --name-only --diff-filter=ACMR -- "basic/playground/**" | sed 's|^basic/||')
+STAGED_FILE=$(basename "$STAGED_FILE_PATH")
+
+if [ -z "$STAGED_FILE_PATH" ]; then
+    exit 0
+fi
+
+BLUE="\033[34m"
+YELLOW="\033[33m"
+GREEN="\033[32m"
+RESET="\033[0m"
+
+printf "${BLUE}Running linter on staged files in 'basic/playground/' - ${GREEN}%s${RESET}\n" "$STAGED_FILE"
+
+(cd basic && pnpm run lint $STAGED_FILE_PATH)
