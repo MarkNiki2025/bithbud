@@ -1,0 +1,15 @@
+{
+    "extends": "@fernir2/saas-kit/cli/configs/tsconfig.cli.json",
+    "compilerOptions": {
+        "rootDir": "./",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@schemas/*": ["./generated/*"],
+            "@npm-commands/*": ["./npm-commands/*"],
+            "@root/*": ["./*"]
+        }
+    },
+    "include": ["next-env.d.ts", "global.d.ts", "./**/*", ".next/types/**/*.ts"],
+    "exclude": ["node_modules", "dist", "build", ".next", "server.ts"]
+}

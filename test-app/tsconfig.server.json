@@ -1,0 +1,14 @@
+{
+    "extends": "@fernir2/saas-kit/cli/configs/tsconfig.server.json",
+    "compilerOptions": {
+        "rootDir": "./",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@schemas/*": ["./generated/*"],
+            "@npm-commands/*": ["./npm-commands/*"],
+            "@root/*": ["./*"]
+        }
+    },
+    "include": ["server.ts"]
+}

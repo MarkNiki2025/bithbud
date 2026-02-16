@@ -1,0 +1,71 @@
+@layer base {
+    * {
+        border-color: var(--color-border);
+    }
+    body {
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+    }
+}
+
+@supports not (-webkit-appearance: none) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--fd-toolbar)) hsl(var(--background));
+    }
+}
+
+@supports (-webkit-appearance: none) {
+    *::-webkit-scrollbar {
+        width: 15px;
+        height: 15px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: hsl(var(--background));
+    }
+
+    *::-webkit-scrollbar-thumb {
+        width: 9px;
+        height: 9px;
+        background: hsl(var(--fd-toolbar));
+        border-radius: var(--radius);
+        border: 3px solid hsl(var(--background));
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--fd-toolbar-hover));
+    }
+
+    *::-webkit-scrollbar-button {
+        display: none;
+    }
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (max-width: 426px) {
+    html,
+    body {
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    body::-webkit-scrollbar,
+    body *::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@layer base {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px hsl(var(--background)) inset;
+        -webkit-text-fill-color: hsl(var(--foreground));
+    }
+}
